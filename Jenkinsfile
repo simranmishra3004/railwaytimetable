@@ -62,6 +62,7 @@ pipeline {
                 script {
                     sleep (time: 5)
                     def response = httpRequest (
+                        authentication: 'credentialsID'
                         url: "http://$KUBE_MASTER_IP:8081/",
                         timeout: 30
                     )
